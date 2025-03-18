@@ -2,8 +2,8 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaHome, FaUserPlus, FaCheck, FaEye, FaCog, FaSignOutAlt } from 'react-icons/fa';
-import './Sidebar.css'; 
+import { FaHome, FaUserPlus, FaCheck, FaEye, FaCog, FaSignOutAlt, FaChalkboardTeacher } from 'react-icons/fa';
+import './Sidebar.css';
 
 const Sidebar = ({ onLogout }) => {
   const navigate = useNavigate();
@@ -26,6 +26,9 @@ const Sidebar = ({ onLogout }) => {
         <Nav.Link as={Link} to="/dashboard" className="sidebar-link">
           <FaHome className="sidebar-icon" /> Dashboard
         </Nav.Link>
+        <Nav.Link as={Link} to="/class-management" className="sidebar-link">
+          <FaChalkboardTeacher className="sidebar-icon" /> Class Management
+        </Nav.Link>
         <Nav.Link as={Link} to="/add-student" className="sidebar-link">
           <FaUserPlus className="sidebar-icon" /> Add Student
         </Nav.Link>
@@ -34,9 +37,6 @@ const Sidebar = ({ onLogout }) => {
         </Nav.Link>
         <Nav.Link as={Link} to="/view-attendance" className="sidebar-link">
           <FaEye className="sidebar-icon" /> View Attendance
-        </Nav.Link>
-        <Nav.Link as={Link} to="/settings" className="sidebar-link">
-          <FaCog className="sidebar-icon" /> Settings
         </Nav.Link>
         <Nav.Link onClick={handleLogout} className="sidebar-link" style={{ cursor: 'pointer' }}>
           <FaSignOutAlt className="sidebar-icon" /> Logout
